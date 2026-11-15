@@ -115,7 +115,7 @@
     img.addEventListener('error', blank, { once: true });
     img.addEventListener('load', () => {
       if (img.naturalWidth < 20) blank();
-      else box.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`; // квадратная обложка — квадрат, прямоугольная — прямоугольник
+      else if (!cls.includes('wiki-cover')) box.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`; // квадратная обложка — квадрат, прямоугольная — прямоугольник
     }, { once: true });
     box.append(img);
     return box;
@@ -125,7 +125,7 @@
 
   const bookCard = (b) =>
     h('li', { class: 'wiki-card book-card' },
-      h('a', { class: 'wiki-card-link', href: href('book', b.asin) }, thumb(b.cover_url)),
+      h('a', { class: 'wiki-card-link', href: href('book', b.asin) }, thumb(b.cover_url, 'wiki-thumb wiki-cover')),
       h('div', { class: 'wiki-card-body' },
         h('h3', { class: 'wiki-card-title' }, h('a', { href: href('book', b.asin) }, b.title || s('untitled'))),
         b.author_key ? h('a', { class: 'wiki-sub', href: href('author', b.author_key) }, b.author) : h('span', { class: 'wiki-sub muted' }, s('unknownAuthor')),
@@ -137,7 +137,7 @@
     const link = kind === 'style' ? href('style', e.key) : href(kind, e.key);
     const name = kind === 'style' ? styleName(e.key) : e.name;
     return h('li', { class: 'wiki-card entity-card' },
-      h('a', { class: 'wiki-card-link', href: link }, thumb(e.cover_url, 'wiki-thumb small')),
+      h('a', { class: 'wiki-card-link', href: link }, thumb(e.cover_url, 'wiki-thumb wiki-cover')),
       h('div', { class: 'wiki-card-body' },
         h('h3', { class: 'wiki-card-title' }, h('a', { href: link }, name)),
         h('span', { class: 'wiki-sub muted' }, pl('nBooks', e.books), kind === 'series' && e.total && e.total > e.books ? ' ' + f('ofTotal', { m: e.total }) : '')));

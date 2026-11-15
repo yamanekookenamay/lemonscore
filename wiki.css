@@ -15,12 +15,16 @@
 .wiki-chip.on { background: var(--lemon-pale); border-color: var(--lemon); font-weight: 600; }
 .wiki-chip:hover { border-color: var(--ink-soft); }
 
-.wiki-grid { list-style: none; margin: 16px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
-.wiki-grid.entities { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.wiki-card { display: flex; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
-.wiki-card-link { flex: none; align-self: flex-start; }
+.wiki-grid { list-style: none; margin: 0; padding: 20px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 36px 24px; }
+.wiki-card { min-width: 0; display: flex; flex-direction: column; }
+.wiki-card-link { display: block; margin-bottom: 12px; text-decoration: none; }
 .wiki-card-body { min-width: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
-.wiki-card-title { margin: 0; font-size: 1rem; line-height: 1.25; font-weight: 600; overflow-wrap: anywhere; }
+/* обложка в списках — как на страницах Books и Authors: крупная рамка 4:5, картинка целиком, без обрезки */
+.wiki-thumb.wiki-cover { width: 100%; aspect-ratio: 4 / 5; align-items: flex-end; border: 0; border-radius: 4px; }
+.wiki-thumb.wiki-cover img { object-position: center bottom; }
+.wiki-thumb.wiki-cover .lemon.big { width: 56px; height: 56px; align-self: center; }
+@media (max-width: 560px) { .wiki-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 14px; } }
+.wiki-card-title { margin: 0; font-size: 1rem; line-height: 1.3; font-weight: 700; overflow-wrap: anywhere; }
 .wiki-card-title a { color: var(--ink); text-decoration: none; }
 .wiki-card-title a:hover { text-decoration: underline; }
 .wiki-sub { font-size: .88rem; color: var(--ink-soft); }
