@@ -18,7 +18,7 @@
 .wiki-grid { list-style: none; margin: 16px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
 .wiki-grid.entities { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .wiki-card { display: flex; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
-.wiki-card-link { flex: none; }
+.wiki-card-link { flex: none; align-self: flex-start; }
 .wiki-card-body { min-width: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
 .wiki-card-title { margin: 0; font-size: 1rem; line-height: 1.25; font-weight: 600; overflow-wrap: anywhere; }
 .wiki-card-title a { color: var(--ink); text-decoration: none; }
@@ -26,8 +26,8 @@
 .wiki-sub { font-size: .88rem; color: var(--ink-soft); }
 a.wiki-sub:hover { color: var(--ink); }
 
-.wiki-thumb { display: flex; align-items: center; justify-content: center; width: 72px; aspect-ratio: 3 / 4; background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-.wiki-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wiki-thumb { flex: none; display: flex; align-items: center; justify-content: center; width: 72px; aspect-ratio: 3 / 4; background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.wiki-thumb img { width: 100%; height: 100%; object-fit: contain; display: block; }
 .wiki-thumb.small { width: 48px; }
 .wiki-thumb.tiny { width: 32px; flex: none; }
 .wiki-thumb.large { width: 100%; max-width: 260px; }

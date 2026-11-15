@@ -113,7 +113,10 @@
     }
     const img = h('img', { src: url, alt: '', loading: 'lazy', decoding: 'async', referrerpolicy: 'no-referrer' });
     img.addEventListener('error', blank, { once: true });
-    img.addEventListener('load', () => { if (img.naturalWidth < 20) blank(); }, { once: true });
+    img.addEventListener('load', () => {
+      if (img.naturalWidth < 20) blank();
+      else box.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`; // квадратная обложка — квадрат, прямоугольная — прямоугольник
+    }, { once: true });
     box.append(img);
     return box;
   };
