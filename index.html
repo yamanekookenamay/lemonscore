@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="wiki.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to books</a>
@@ -21,6 +22,8 @@
     <nav class="nav" aria-label="Main">
       <a href="#/" data-nav="books" data-i18n="navBooks">Books</a>
       <a href="#/authors" data-nav="authors" data-i18n="navAuthors">Authors</a>
+      <a href="#/wiki" data-nav="wiki" data-i18n="navWiki">Wiki</a>
+      <a href="#/install" data-nav="install" data-i18n="navInstall">Get the extension</a>
     </nav>
     <div class="top-right">
       <span class="ext-status" id="extStatus" hidden></span>
@@ -33,7 +36,7 @@
       <h1 class="hero-title" data-i18n="heroTitle">Was this coloring book drawn by a human?</h1>
       <p class="hero-text" data-i18n="heroText">Readers with the Lemon Score extension rate coloring books on Amazon for signs of AI art. These are all the books rated so far.</p>
       <p class="hero-cta" id="heroCta" hidden>
-        <a class="btn" id="installLink" href="#" target="_blank" rel="noopener" data-i18n="install">Install the extension</a>
+        <a class="btn" id="installLink" href="#/install" data-i18n="install">Install the extension</a>
         <span class="muted" data-i18n="installNote">to rate books right on Amazon and see your ratings here.</span>
       </p>
     </section>
@@ -54,6 +57,7 @@
   </svg>
 
   <script src="config.js"></script>
+  <script src="wiki.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

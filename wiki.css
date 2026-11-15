@@ -1,0 +1,56 @@
+/* Lemon Score Wiki — стили раздела. Используют переменные из styles.css. */
+.wiki-search { display: flex; gap: 8px; max-width: 560px; margin: 16px 0 8px; }
+.wiki-search .search { flex: 1; }
+.wiki-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0 8px; }
+.wiki-tile { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper-2); text-decoration: none; color: var(--ink); }
+.wiki-tile b { font-size: 1.7rem; font-weight: 800; line-height: 1.1; }
+.wiki-tile span { color: var(--ink-soft); }
+.wiki-tile:hover { border-color: var(--ink-soft); }
+.wiki-section { margin: 24px 0; }
+.wiki-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.wiki-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.wiki-chips.inline { margin: 0; }
+.wiki-chip { display: inline-block; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-2); color: var(--ink); text-decoration: none; font-size: .88rem; }
+.wiki-chip.big { padding: 6px 14px; font-size: .95rem; }
+.wiki-chip.on { background: var(--lemon-pale); border-color: var(--lemon); font-weight: 600; }
+.wiki-chip:hover { border-color: var(--ink-soft); }
+
+.wiki-grid { list-style: none; margin: 16px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+.wiki-grid.entities { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.wiki-card { display: flex; gap: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.wiki-card-link { flex: none; }
+.wiki-card-body { min-width: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.wiki-card-title { margin: 0; font-size: 1rem; line-height: 1.25; font-weight: 600; overflow-wrap: anywhere; }
+.wiki-card-title a { color: var(--ink); text-decoration: none; }
+.wiki-card-title a:hover { text-decoration: underline; }
+.wiki-sub { font-size: .88rem; color: var(--ink-soft); }
+a.wiki-sub:hover { color: var(--ink); }
+
+.wiki-thumb { display: flex; align-items: center; justify-content: center; width: 72px; aspect-ratio: 3 / 4; background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.wiki-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wiki-thumb.small { width: 48px; }
+.wiki-thumb.tiny { width: 32px; flex: none; }
+.wiki-thumb.large { width: 100%; max-width: 260px; }
+.wiki-thumb .lemon.big { width: 36px; height: 36px; }
+.wiki-thumb.tiny .lemon.big { width: 18px; height: 18px; }
+
+.wiki-book { display: grid; grid-template-columns: minmax(160px, 260px) minmax(0, 1fr) minmax(220px, 300px); gap: 28px; align-items: start; margin-top: 8px; }
+.wiki-book-cover { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.wiki-info { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.wiki-info th, .wiki-info td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.wiki-info th { width: 34%; font-weight: 500; color: var(--ink-soft); }
+.wiki-info td { overflow-wrap: anywhere; }
+.wiki-mini { list-style: none; margin: 8px 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.wiki-mini a { display: flex; gap: 10px; align-items: center; color: var(--ink); text-decoration: none; font-size: .92rem; }
+.wiki-mini a:hover span { text-decoration: underline; }
+.wiki-mini li.on a { font-weight: 700; }
+.wiki-book-side .section-title, .wiki-book-main .section-title { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .wiki-book { grid-template-columns: minmax(120px, 200px) minmax(0, 1fr); }
+  .wiki-book-side { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .wiki-book { grid-template-columns: 1fr; }
+  .wiki-thumb.large { max-width: 180px; }
+}
